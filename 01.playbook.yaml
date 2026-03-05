@@ -1,0 +1,6 @@
+- name: To ping the server
+ # there is a keyword called host we need to specify here which server we need to conenct
+  hosts: frontend # from inventory file
+  tasks:
+  - name: ping the server
+    ansible.builtin.ping:
