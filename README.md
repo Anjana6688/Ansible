@@ -1,7 +1,8 @@
 # Ansible
 /***************************Session-22***************************************/
-Topics: 
-        Disadvantages of shell
+Topics:   
+        
+		Disadvantages of shell
         What is configuration management
         Push vs Pull
         Ansible installation
@@ -10,17 +11,18 @@ Topics:
         Playbooks
 /***************************************************************************/
 
-How to connect one linux server to other:
+How to connect one linux server to other:  
 1.login to the server and connect another server using below command
 ssh ec2-user@10.36.85.1 'touch /tmp/shell.txt'
 so it will login without interactively.
-Also we can use SCP command to transfer files.
-1. copy the script and dependent files, mongo.repo and mongodb.sh
-command: scp mongo.repo mongodb.sh ec2-user@10.36.86.1:/tmp/shell
-2. then execute from main server
+Also we can use SCP command to transfer files.  
+2. copy the script and dependent files, mongo.repo and mongodb.sh
+command: scp mongo.repo mongodb.sh ec2-user@10.36.86.1:/tmp/shell  
+3. then execute from main server
 ssh ec2-user@10.36.86.1 'cd /tmp&& sudo sh mongodb.sh
 
 Why Ansible?
+============
 Ansible is developed in python.
 Ansible is used for configuration.Configuration is used for within the server.
 Ansible can connect any system aws,azure windows linux/mac server by modules.
@@ -29,7 +31,8 @@ To Handle all these we are using push and pull(Ansible is popular in Push and re
 
 
 What is pull and psuh?
-Case: Your friend sent an parcel via DDTC
+=====================    
+Case:   Your friend sent an parcel via DDTC  
 Polling/Pulling
 ===============
 I go to DTDC everyday and check whether I received courier or not
@@ -44,12 +47,15 @@ Pull Vs Push Architecture:
 ==========================
 Pull:
 =====
+  
 In Pull Architecture we need nodes with agent software to pull Configurations/connect to Configuration server.
 So we need to install agent software in every node and configured like it will check every configuration every 30mins.
 SO Agent software required and own protocal to pull there is no SSH.
 There is Ruby language for this setup.
+      
 Push:
 =====
+   
 In Push Architecture there is no need extra software.In Configuration server it will automaticall push to noded.
 It will connect nodes to SSH.SO it is secure.
 So Ansible(CLI) is popular in it and files are Yaml Language,which is compartively simple when compare to Ruby.
@@ -59,15 +65,18 @@ ansible all -i 172.31.26.71, -e ansible_user=ec2-user -e ansible_password=DevOps
 
 
 Data Transfer Objects :JSON,YAML,XML
-These will transfer the data btwn systems.
+These will transfer the data btwn systems.   
+
 XML -> Extensive Markup Language
-================================
+================================   
+
 <Name>Sivakumar</Name>
 JSON:
 {
 "name:" "anjana",
 
 }
+    
 YAML:Yet another markup language
 =====================
 starts with - and here adress is string/list so again starts with - and all should be in same line
@@ -83,10 +92,10 @@ like name dob...
 	- java
 	- python
 	
-	here each one is a list so we used -.
+	here each one is a list so we used -.    
 	
 How to write an Ansible Playbook?
-=================================
+=================================   
 Inventory:
 In this file we can specify multiple servers in a group so if we define with that group in  playbook it will connect those servers are under that group.
 suppose we have created a group [frontend] under this we have multiple servers if you want to connetct frontend it will connect serveres under that group.
