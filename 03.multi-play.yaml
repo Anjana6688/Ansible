@@ -3,19 +3,19 @@
   tasks:
   - name: PLAY-01 nand TASK-01
     ansible.builtin.debug:  # This is is the command for print message like in linux echo.
-    msg: "Hello  from PLAY-01 nand TASK-01 !"
+    msg: "Hello  from PLAY-01 and TASK-01 !"
   
   - name: PLAY-01 nand TASK-01
     ansible.builtin.debug:  # This is is the command for print message like in linux echo.
-    msg: "Hello  from PLAY-01 nand TASK-02 !"
+    msg: "Hello  from PLAY-01 and TASK-02 !"
 
-- name: play-02
+- name: PLAY-02
   hosts: frontend
   tasks:
   - name: PLAY-02 nand TASK-01
     ansible.builtin.debug:  # This is is the command for print message like in linux echo.
-    msg: "Hello  from PLAY-02 nand TASK-01 !"
+    msg: "Hello  from PLAY-02 and TASK-01 !"
   
-  - name: PLAY-01 nand TASK-01
+  - name: PLAY-02 nand TASK-01
     ansible.builtin.debug:  # This is is the command for print message like in linux echo.
-    msg: "Hello  from PLAY-02 nand TASK-02 !"
+    msg: "Hello  from PLAY-02 and TASK-02 !"
