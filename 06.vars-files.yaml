@@ -1,0 +1,10 @@
+---
+- name: Variables from files
+  hosts: localServer
+  connection: local
+  vars_files:
+    - course.yaml
+  tasks:
+   - name: print the person info
+     ansible.builtin.package:
+        msg: "Person favourite colour is: {{ FAVCOLOUR }}, name is : {{ NAME }}, CITY: {{ CITY }}"
