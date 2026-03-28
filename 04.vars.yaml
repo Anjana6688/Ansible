@@ -1,0 +1,12 @@
+- name: Play level Variables.
+  hosts: localServer  # from inventory...
+  connection: local   # connect local server..
+  vars:
+  FAVCOLOUR: Peach
+  NAME: Anjana
+  CITY: Delhi
+  tasks:
+  - name: print the person info
+    ansible.builtin.debug:
+    msg: "Person favourite colour is: {{ FAVCOLOUR }}, name is : {{ NAME }}, CITY: {{ CITY }}"
+
