@@ -6,5 +6,5 @@
     - course.yaml
   tasks:
    - name: print the person info
-     ansible.builtin.package:
+     ansible.builtin.debug:
       msg: "Person favourite colour is: {{ FAVCOLOUR }}, name is : {{ NAME }}, CITY: {{ CITY }}"
