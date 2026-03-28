@@ -3,7 +3,7 @@
   hosts: localServer
   connection: local
   vars_files:
-    - course.yaml
+    - course.yaml # vaiables defined in course file here we are calling
   tasks:
    - name: print the person info
      ansible.builtin.debug:
