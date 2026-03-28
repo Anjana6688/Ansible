@@ -2,9 +2,9 @@
   hosts: localServer  # from inventory...
   connection: local   # connect local server..
   vars:
-  FAVCOLOUR: Peach
-  NAME: Anjana
-  CITY: Delhi
+    FAVCOLOUR: Peach
+    NAME: Anjana
+    CITY: Delhi
   tasks:
   - name: print the person info
     ansible.builtin.debug:
