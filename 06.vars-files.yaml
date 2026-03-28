@@ -7,4 +7,4 @@
   tasks:
    - name: print the person info
      ansible.builtin.package:
-        msg: "Person favourite colour is: {{ FAVCOLOUR }}, name is : {{ NAME }}, CITY: {{ CITY }}"
+      msg: "Person favourite colour is: {{ FAVCOLOUR }}, name is : {{ NAME }}, CITY: {{ CITY }}"
