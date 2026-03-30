@@ -1,5 +1,5 @@
-- name: data types
-  hosts: local
+- name: preference varibale
+  host: localserver
   connection: local
   vars:
     Course: "DevOps with AWS" # string
