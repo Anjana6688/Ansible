@@ -1,5 +1,5 @@
 - name: gather facts
-  hosts: local
+  hosts: localServer
   connection: local
   # ansible collects the info of target server, before it executes any other fact
   tasks:
