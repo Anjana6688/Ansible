@@ -1,8 +1,8 @@
-- name: preference varibale
-  host: localserver
+- name: preference Variables
+  hosts: localServer
   connection: local
   vars:
-    number: 10
+    number: 1
   tasks:
   - name: check number is less than 10 or not
     ansible.builtin.debug:
