@@ -1,0 +1,13 @@
+- name: Install pacakges
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: print names
+    ansible.builtin.package:
+      name: "{{ item.name }}"  # needs to refer item.name and state so it will work according to those.
+      state: "{{ item.state }}"
+    loop:
+    - { name: "nginx", state: "absent"}  # it will uninstall the nginx absent keyword
+    - { name: "mysql", state: "absent"}
+    - { name: "zip", state: "latest"}  # it will install the zip latest keyword

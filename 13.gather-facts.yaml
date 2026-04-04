@@ -5,4 +5,6 @@
   tasks:
   - name: facts
     ansible.builtin.debug:
-      msg: "{{ ansible_facts }}" # ansible_facts contains all the info
+      msg: "{{ ansible_facts }}" # ansible_facts contains all the info of server OS details
+      # we can use these facts info to  install the OS if somethin is not possible we can write playbooks use these target server facts.
+      

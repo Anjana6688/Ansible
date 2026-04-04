@@ -1,0 +1,13 @@
+- name: Install pacakges
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: print names
+    ansible.builtin.package: # module for package is package
+      name: "{{ item }}" # item is reserved variable it will store each loop in it ex: item =nginx
+      state: latest
+    loop:
+    - nginx
+    - mysql
+    - zip
