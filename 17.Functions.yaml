@@ -4,6 +4,10 @@
   connection: local
   vars:
     technologies: "DevOps,Linux,Python" # String
+    # dictionary==map
+    tags:
+    Application: payment
+    Environment: dev 
   tasks:
     - name: Use default variable if not defined
       ansible.builtin.debug:
@@ -14,3 +18,8 @@
       ansible.builtin.debug:
         msg: "Technologies are: {{ technologies | split(',') }}"
       # 'split' turns a string into a list based on a delimiter
+
+    - name: Convert Map to list
+      ansible.builtin.debug:
+        msg: "Tags are: {{ tags | dict2items }}"
+
