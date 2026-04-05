@@ -1,13 +1,16 @@
-- name: functions
-  hosts: localServer
+---
+- name: Functions Demonstration
+  hosts: localhost
   connection: local
   vars:
-    technologies: "DevOps,Linux,Python" #string currently
-  tasks: 
-  - name: default variable
-    ansible.builtin.debug:
-      msg: "My Name is, {{ Name | default('Ramesh') }}" # here name is not defined we can use default filter in these cases
+    technologies: "DevOps,Linux,Python" # String
+  tasks:
+    - name: Use default variable if not defined
+      ansible.builtin.debug:
+        msg: "My Name is, {{ Name | default('Ramesh') }}"
+      # 'Name' is not defined in vars, so it defaults to 'Ramesh'
 
-  - name: convert string to list
-    ansible.builtin.debug:
-    msg: "Technologies are: {{ technologies | split(',') }}"
+    - name: Convert string to list using split
+      ansible.builtin.debug:
+        msg: "Technologies are: {{ technologies | split(',') }}"
+      # 'split' turns a string into a list based on a delimiter
