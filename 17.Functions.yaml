@@ -6,7 +6,8 @@
   tasks: 
   - name: default variable
     ansible.builtin.debug:
-      msg: "My Name is {{ Name | default('Ramesh') }}" # here name is not defined we can use default filter in these cases
+      msg: "My Name is , {{ Name | default('Ramesh') }}" # here name is not defined we can use default filter in these cases
+
   - name: converts string to list
     ansible.builtin.debug:
     msg: "Technologies are : {{ technologies | split(',') }}"
