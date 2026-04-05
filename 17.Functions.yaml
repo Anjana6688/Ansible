@@ -30,6 +30,6 @@
 
     - name: Transforming lists into dictionaries
       ansible.builtin.debug:
-        msg: "tag map: {{ listTags | items2dict }}"
+        msg: "tag map: {{ ListTags | items2dict }}"
      
     
