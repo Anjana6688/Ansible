@@ -31,5 +31,12 @@
     - name: Transforming lists into dictionaries
       ansible.builtin.debug:
         msg: "tag map: {{ ListTags | items2dict }}"
-     
+
+    - name: read yaml and take it into variable
+      ansible.builtin.set_fact:
+      student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}" #lookup is a function and file is student.yml it will read the file and store it in student_yaml
+
+    - name: convert yaml into json
+      ansible.builtin.debug:
+      msg: "json: {{ student_yaml | to_json  }}"
     
