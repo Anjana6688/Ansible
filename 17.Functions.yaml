@@ -4,6 +4,9 @@
   connection: local
   vars:
     technologies: "DevOps,Linux,Python" # String
+    name: "Sivakumar reddy M"
+    gmail: Info@GMAIL.COM
+    ipaddress: "19222.168.0.1"
     # dictionary==map
     tags:
       Application: payment
