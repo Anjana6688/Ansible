@@ -46,3 +46,40 @@
         dest: ./student-data.json
         content: "{{ student_yaml | to_nice_json  }}"  #nice json means human readable
     
+    - name: convert uppercase
+      ansible.builtin.debug:
+        msg: "{{ name | upper }}"
+
+    - name: convert lowercase
+      ansible.builtin.debug:
+        msg: "{{ gmail | lower }}"
+
+    - name: check IP is valid or not
+      ansible.builtin.debug: 
+       msg: "{{ ipaddress | ansible.utils.ipv4 }}"
+
+    - name: grep for root
+    #ansible.builtin.command: cat /etc/passwd | grep root
+      ansible.builtin.shell: cat /etc/passwd | grep root
+      register: command_output
+
+    - name: print the command_output
+      ansible.builtin.debug:
+        msg: "{{ command_output }}"
+
+    - name: redirect the output
+      ansible.builtin.command: ls -ltr > /tmp/output.txt
+      register: redirect_output
+      ignore_errors: true
+
+    - name: print redirect_output
+      ansible.builtin.debug:
+        msg: "{{ redirect_output }}"
+
+    - name: redirect the output using shell
+      ansible.builtin.shell: ls -ltr > /tmp/output.txt
+      register: redirect_output
+
+    - name: print redirect_output shell
+      ansible.builtin.debug:
+        msg: "{{ redirect_output }}"
